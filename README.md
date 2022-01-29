@@ -1,4 +1,4 @@
-# Machine-Learning-Chekcers
+# Machine-Learning-Checkers
 The goal of this project is to use computer vision to create an Artificial Intellegence which plays checkers against a human opponenet
 The first step in this is creating a version of checkers playable by a machine in python.
 To do this, I created a checker board using a numpy array. 
