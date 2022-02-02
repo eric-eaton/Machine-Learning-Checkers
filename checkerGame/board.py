@@ -1,6 +1,5 @@
 """
-A Checkers board is an 8x8 array. This will be represented by a numpy array. In checkers, a square is either occupied
-or unoccupied. This will be represented with NaN values.
+A Checkers board is an 8x8 array. This will be represented by a numpy array.
 """
 import numpy as np
 from tile import Tile
@@ -11,7 +10,7 @@ class CheckerBoard:
 
     """
     CONSTRUCTOR
-    This constructor creates an empty 8x8 numpy array and then fills it with NaN values.
+    This constructor creates an empty 8x8 object numpy array and then fills it with tile objects.
     """
     def __init__(self):
         self.board = np.empty((8, 8),dtype='object')
@@ -26,7 +25,15 @@ class CheckerBoard:
                 self.board[row,column] = tile
     """
     GETTER
-    This function returns the board created by the constructor
+    This allows indexing and iteration of the board array object. allows methods contained in the tile class to be
+    called by their index postion: board[0,1].get_position() will return ('B',1)
     """
-    def getBoard(self):
-        return self.board
+    def __getitem__(self, item):
+        return self.board[item]
+
+
+
+"""
+from board import CheckerBoard
+board = CheckerBoard()
+"""
