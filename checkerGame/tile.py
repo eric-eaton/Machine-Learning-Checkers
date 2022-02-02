@@ -1,7 +1,7 @@
 """
 This module creates the tile object which will populate the board object
 """
-
+from piece import CheckerPiece
 
 class Tile:
 
@@ -9,7 +9,7 @@ class Tile:
         self.valid = True
         self.position = ('A', 1)
         self.occupied = False
-        self.occupiedColor = None
+        self.occupiedPiece = None
 
     """
     SETTERS
@@ -109,19 +109,11 @@ class Tile:
                 case 8: self.valid = True
 
 
+    # creates a new piece object.
+    def occupy(self, color, label):
+        self.occupiedPiece = CheckerPiece(color,self.position,label)
+        self.occupied = True
 
-
-
-
-
-
-
-
-
-    # set_occupied() take a boolean value and sets whether the space is occupied by a piece
-    def set_occupied(self, occupancy):
-        if isinstance(occupancy, bool):
-            self.occupied = occupancy
 
     """ 
     set_positive take the column and row index values from the current iteration of the array
